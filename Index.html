@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynasty Hoops GM</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- MENÚ PRINCIPAL -->
+    <div id="menu">
+
+        <h1>🏀 DYNASTY HOOPS GM</h1>
+
+        <button id="newGame">
+            Nueva Carrera
+        </button>
+
+        <button disabled>
+            Continuar
+        </button>
+
+        <button disabled>
+            Ajustes
+        </button>
+
+    </div>
+
+    <!-- JUEGO -->
+    <div id="game" class="hidden">
+
+        <header>
+
+            <h2 id="teamName">
+                Puerto Plata Sharks
+            </h2>
+
+            <p>
+                Récord:
+                <span id="record">
+                    0-0
+                </span>
+            </p>
+
+            <p>
+                Dinero:
+                <span id="money">
+                    $50,000,000
+                </span>
+            </p>
+
+            <p>
+                Fans:
+                <span id="fans">
+                    82%
+                </span>
+            </p>
+
+        </header>
+
+        <div class="panel">
+
+            <button id="playBtn">
+                🏀 Jugar Partido
+            </button>
+
+        </div>
+
+        <pre id="log">
+Bienvenido General Manager.
+
+Pulsa "Jugar Partido" para comenzar la temporada.
+        </pre>
+
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
