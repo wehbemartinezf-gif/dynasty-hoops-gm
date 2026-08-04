@@ -96,3 +96,48 @@ document.getElementById("playBtn").addEventListener("click", ()=>{
     updateDashboard();
 
 });
+const roster = [
+
+{name:"Luis Martínez",pos:"PG",ovr:84,morale:92,energy:100},
+
+{name:"Carlos Reyes",pos:"SG",ovr:81,morale:90,energy:100},
+
+{name:"Miguel Santos",pos:"SF",ovr:86,morale:95,energy:100},
+
+{name:"José Pérez",pos:"PF",ovr:80,morale:88,energy:100},
+
+{name:"Robert King",pos:"C",ovr:89,morale:97,energy:100}
+
+];
+
+function renderRoster(){
+
+const container=document.getElementById("players");
+
+container.innerHTML="";
+
+roster.forEach(player=>{
+
+container.innerHTML+=`
+
+<div class="player-card">
+
+<h3>${player.name}</h3>
+
+<p>${player.pos}</p>
+
+<p>⭐ ${player.ovr}</p>
+
+<p>❤️ ${player.morale}</p>
+
+<p>⚡ ${player.energy}%</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+renderRoster();
