@@ -77,3 +77,32 @@ border-radius:15px;
 white-space:pre-line;
 
 }
+.player-card{
+
+background:#1c2535;
+
+padding:15px;
+
+margin:12px 0;
+
+border-radius:12px;
+
+border-left:6px solid #00d084;
+
+}
+
+.player-card h3{
+
+margin:0;
+
+font-size:22px;
+
+}
+
+.player-card p{
+
+margin:6px 0;
+
+font-size:17px;
+
+}
