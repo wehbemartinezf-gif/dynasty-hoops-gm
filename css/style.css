@@ -1,108 +1,98 @@
-body{
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynasty Hoops GM</title>
 
-margin:0;
+<link rel="stylesheet" href="css/style.css">
 
-background:#08111d;
+</head>
 
-font-family:Arial;
+<body>
 
-color:white;
+<div id="menu">
 
-}
+<h1>🏀 DYNASTY HOOPS GM</h1>
 
-#menu{
+<h3>Conviértete en el mejor General Manager</h3>
 
-width:350px;
+<button id="newGame">Nueva Carrera</button>
 
-margin:80px auto;
+</div>
 
-text-align:center;
+<div id="game" class="hidden">
 
-}
+<div class="topbar">
 
-button{
+<div>
 
-width:100%;
+<h2 id="teamName">Puerto Plata Sharks</h2>
 
-padding:18px;
+<p>Temporada <span id="season">1</span></p>
 
-margin:10px 0;
+</div>
 
-font-size:20px;
+</div>
 
-background:#1565ff;
+<div class="dashboard">
 
-color:white;
+<div class="card">
 
-border:none;
+<h3>🏆 Récord</h3>
 
-border-radius:12px;
+<h1 id="record">0-0</h1>
 
-}
+</div>
 
-.hidden{
+<div class="card">
 
-display:none;
+<h3>💰 Dinero</h3>
 
-}
+<h1 id="money">$50M</h1>
 
-header{
+</div>
 
-background:#111827;
+<div class="card">
 
-padding:20px;
+<h3>👥 Fans</h3>
 
-}
+<h1 id="fans">82%</h1>
 
-.panel{
+</div>
 
-padding:20px;
+</div>
 
-}
+<button id="playBtn">
 
-#log{
+🏀 JUGAR PARTIDO
 
-background:#101010;
+</button>
 
-height:300px;
+<div id="log">
 
-overflow:auto;
+Bienvenido General Manager
 
-padding:20px;
+</div>
 
-margin:20px;
+<nav>
 
-border-radius:15px;
+<button>🏠</button>
 
-white-space:pre-line;
+<button>👥</button>
 
-}
-.player-card{
+<button>📅</button>
 
-background:#1c2535;
+<button>🤝</button>
 
-padding:15px;
+<button>⚙️</button>
 
-margin:12px 0;
+</nav>
 
-border-radius:12px;
+</div>
 
-border-left:6px solid #00d084;
+<script src="js/main.js"></script>
 
-}
+</body>
 
-.player-card h3{
-
-margin:0;
-
-font-size:22px;
-
-}
-
-.player-card p{
-
-margin:6px 0;
-
-font-size:17px;
-
-}
+</html>
