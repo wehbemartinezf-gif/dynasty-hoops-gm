@@ -96,3 +96,46 @@ Bienvenido General Manager
 </body>
 
 </html>
+#screen{
+
+margin-top:20px;
+
+display:grid;
+
+gap:12px;
+
+}
+
+.player{
+
+background:#20293a;
+
+border-radius:16px;
+
+padding:15px;
+
+transition:.2s;
+
+}
+
+.player:active{
+
+transform:scale(.97);
+
+}
+
+.player h3{
+
+font-size:22px;
+
+margin-bottom:8px;
+
+}
+
+.player p{
+
+opacity:.8;
+
+margin:4px 0;
+
+}
