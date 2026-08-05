@@ -123,3 +123,32 @@ Pulsa "JUGAR PARTIDO"
 para comenzar.`;
 
 }
+const screen=document.getElementById("screen");
+
+function showRoster(){
+
+screen.innerHTML="";
+
+PLAYERS.forEach(player=>{
+
+screen.innerHTML+=`
+
+<div class="player">
+
+<h3>${player.name}</h3>
+
+<p>${player.pos}</p>
+
+<p>⭐ OVR ${player.ovr}</p>
+
+<p>⚡ ${player.energy}%</p>
+
+<p>😊 ${player.morale}%</p>
+
+</div>
+
+`;
+
+});
+
+}
