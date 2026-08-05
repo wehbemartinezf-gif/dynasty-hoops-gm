@@ -1,4 +1,5 @@
 const GAME = {
+    season: 1,
     team: {
         name: "Puerto Plata Sharks",
         wins: 0,
@@ -6,64 +7,75 @@ const GAME = {
         money: 50000000,
         fans: 82
     },
-
     opponent: "Miami Wolves",
 
-    season: 1
+    roster: [
+        {name:"Luis Martínez",pos:"PG",ovr:84},
+        {name:"Carlos Reyes",pos:"SG",ovr:81},
+        {name:"Miguel Santos",pos:"SF",ovr:86},
+        {name:"José Pérez",pos:"PF",ovr:80},
+        {name:"Robert King",pos:"C",ovr:89}
+    ]
 };
 
-// -------- BOTÓN NUEVA CARRERA --------
+const menu = document.getElementById("menu");
+const game = document.getElementById("game");
 
-document.getElementById("newGame").addEventListener("click", () => {
+const teamName = document.getElementById("teamName");
+const season = document.getElementById("season");
+const record = document.getElementById("record");
+const money = document.getElementById("money");
+const fans = document.getElementById("fans");
+const log = document.getElementById("log");
 
-    document.getElementById("menu").classList.add("hidden");
-    document.getElementById("game").classList.remove("hidden");
+document.getElementById("newGame").addEventListener("click", startGame);
+document.getElementById("playBtn").addEventListener("click", playGame);
+
+function startGame(){
+
+    menu.classList.add("hidden");
+    game.classList.remove("hidden");
 
     updateDashboard();
 
-});
+    showHome();
 
-// -------- ACTUALIZA EL DASHBOARD --------
+}
 
 function updateDashboard(){
 
-    document.getElementById("teamName").textContent =
-        GAME.team.name;
+    teamName.textContent = GAME.team.name;
 
-    document.getElementById("record").textContent =
+    season.textContent = GAME.season;
+
+    record.textContent =
         GAME.team.wins + "-" + GAME.team.losses;
 
-    document.getElementById("money").textContent =
-        "$" + GAME.team.money.toLocaleString();
+    money.textContent =
+        "$" + (GAME.team.money/1000000).toFixed(1) + "M";
 
-    document.getElementById("fans").textContent =
+    fans.textContent =
         GAME.team.fans + "%";
 
 }
 
-// -------- JUGAR PARTIDO --------
+function playGame(){
 
-document.getElementById("playBtn").addEventListener("click", ()=>{
+    const my = 90 + Math.floor(Math.random()*21);
 
-    let myScore = 90 + Math.floor(Math.random()*31);
-
-    let cpuScore = 90 + Math.floor(Math.random()*31);
+    const cpu = 90 + Math.floor(Math.random()*21);
 
     let text = "";
 
-    text += "🏀 TEMPORADA " + GAME.season + "\n\n";
-
-    text += GAME.team.name + " vs " + GAME.opponent + "\n\n";
-
-    if(myScore > cpuScore){
+    if(my>cpu){
 
         GAME.team.wins++;
 
-        GAME.team.money += 800000;
+        GAME.team.money += 700000;
 
-        GAME.team.fans += 2;
+        GAME.team.fans++;
 
-        text += "🏆 ¡VICTORIA!\n\n";
+        text+="🏆 ¡Victoria!\n\n";
 
     }else{
 
@@ -71,73 +83,43 @@ document.getElementById("playBtn").addEventListener("click", ()=>{
 
         GAME.team.money -= 250000;
 
-        GAME.team.fans -= 1;
+        GAME.team.fans--;
 
-        text += "❌ DERROTA\n\n";
+        text+="❌ Derrota\n\n";
 
     }
 
-    if(GAME.team.fans > 100) GAME.team.fans = 100;
+    text += GAME.team.name+" "+my+"\n";
+    text += GAME.opponent+" "+cpu+"\n\n";
 
-    if(GAME.team.fans < 0) GAME.team.fans = 0;
+    text += "Jugador del Partido\n";
 
-    text += "Marcador Final\n\n";
+    const mvp =
+        GAME.roster[Math.floor(Math.random()*GAME.roster.length)];
 
-    text += GAME.team.name + ": " + myScore + "\n";
+    text += "⭐ "+mvp.name+"\n";
+    text += "OVR "+mvp.ovr;
 
-    text += GAME.opponent + ": " + cpuScore + "\n\n";
-
-    text += "💰 Dinero: $" + GAME.team.money.toLocaleString() + "\n";
-
-    text += "👥 Fans: " + GAME.team.fans + "%";
-
-    document.getElementById("log").textContent = text;
+    log.textContent = text;
 
     updateDashboard();
 
-});
-const roster = [
-
-{name:"Luis Martínez",pos:"PG",ovr:84,morale:92,energy:100},
-
-{name:"Carlos Reyes",pos:"SG",ovr:81,morale:90,energy:100},
-
-{name:"Miguel Santos",pos:"SF",ovr:86,morale:95,energy:100},
-
-{name:"José Pérez",pos:"PF",ovr:80,morale:88,energy:100},
-
-{name:"Robert King",pos:"C",ovr:89,morale:97,energy:100}
-
-];
-
-function renderRoster(){
-
-const container=document.getElementById("players");
-
-container.innerHTML="";
-
-roster.forEach(player=>{
-
-container.innerHTML+=`
-
-<div class="player-card">
-
-<h3>${player.name}</h3>
-
-<p>${player.pos}</p>
-
-<p>⭐ ${player.ovr}</p>
-
-<p>❤️ ${player.morale}</p>
-
-<p>⚡ ${player.energy}%</p>
-
-</div>
-
-`;
-
-});
-
 }
 
-renderRoster();
+function showHome(){
+
+    log.textContent =
+`Bienvenido General Manager.
+
+🏀 Objetivos
+
+• Ganar el campeonato
+
+• Mantener felices a los fans
+
+• Construir una dinastía
+
+Pulsa "JUGAR PARTIDO"
+para comenzar.`;
+
+}
