@@ -39,7 +39,7 @@ function startGame(){
     updateDashboard();
 
     showHome();
-
+showRoster();
 }
 
 function updateDashboard(){
