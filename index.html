@@ -1,88 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynasty Hoops GM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynasty Hoops GM</title>
 
-    <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
 
-    <!-- MENÚ PRINCIPAL -->
-    <div id="menu">
+<div id="menu">
 
-        <h1>🏀 DYNASTY HOOPS GM</h1>
+<h1>🏀 DYNASTY HOOPS GM</h1>
 
-        <button id="newGame">
-            Nueva Carrera
-        </button>
+<h3>Conviértete en el mejor General Manager</h3>
 
-        <button disabled>
-            Continuar
-        </button>
+<button id="newGame">Nueva Carrera</button>
 
-        <button disabled>
-            Ajustes
-        </button>
+</div>
 
-    </div>
+<div id="game" class="hidden">
 
-    <!-- JUEGO -->
-    <div id="game" class="hidden">
-<section id="roster">
+<div class="topbar">
 
-<h2>🏀 Plantilla</h2>
+<div>
 
-<div id="players"></div>
+<h2 id="teamName">Puerto Plata Sharks</h2>
 
-</section>
-        <header>
+<p>Temporada <span id="season">1</span></p>
 
-            <h2 id="teamName">
-                Puerto Plata Sharks
-            </h2>
+</div>
 
-            <p>
-                Récord:
-                <span id="record">
-                    0-0
-                </span>
-            </p>
+</div>
 
-            <p>
-                Dinero:
-                <span id="money">
-                    $50,000,000
-                </span>
-            </p>
+<div class="dashboard">
 
-            <p>
-                Fans:
-                <span id="fans">
-                    82%
-                </span>
-            </p>
+<div class="card">
 
-        </header>
+<h3>🏆 Récord</h3>
 
-        <div class="panel">
+<h1 id="record">0-0</h1>
 
-            <button id="playBtn">
-                🏀 Jugar Partido
-            </button>
+</div>
 
-        </div>
+<div class="card">
 
-        <pre id="log">
-Bienvenido General Manager.
+<h3>💰 Dinero</h3>
 
-Pulsa "Jugar Partido" para comenzar la temporada.
-        </pre>
+<h1 id="money">$50M</h1>
 
-    </div>
+</div>
 
-    <script src="js/main.js"></script>
+<div class="card">
+
+<h3>👥 Fans</h3>
+
+<h1 id="fans">82%</h1>
+
+</div>
+
+</div>
+
+<button id="playBtn">
+
+🏀 JUGAR PARTIDO
+
+</button>
+
+<div id="log">
+
+Bienvenido General Manager
+
+</div>
+
+<nav>
+
+<button>🏠</button>
+
+<button>👥</button>
+
+<button>📅</button>
+
+<button>🤝</button>
+
+<button>⚙️</button>
+
+</nav>
+
+</div>
+
+<script src="js/main.js"></script>
 
 </body>
+
 </html>
